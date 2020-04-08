@@ -9,3 +9,9 @@ resource "null_resource" "parallel_run" {
         command = "ls -l; whoami; uname -a; sleep 10"
     }
 }
+
+resource "null_resource" "run_2" {
+    provisioner "local-exec" {
+        command = "ps aux"
+    }
+}
